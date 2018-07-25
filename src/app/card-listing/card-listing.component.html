@@ -1,0 +1,38 @@
+
+<div class="full"> 
+<form id="propertiesForm" action="demo-real-estate-properties.html" method="POST" class="search-form">
+  <div class="form-row filter-patient">
+    <div class="col-md-12">
+        <div class="input-container">
+          
+            <input class="input-field" type="text" (keypress)="onpressed($event)" (keyup)="onchanged($event)" placeholder="Search.." name="patientName">
+            
+          </div>
+          
+    </div>
+   
+  </div>
+</form>
+<div dnd-sortable-container [sortableData]=" filteredpeopl">
+<div class="container" *ngFor="let people of filteredpeopl;let i = index"  dnd-sortable [sortableIndex]="i" [ngClass]="{'active': !people.deactivated}" (click)="people.deactivated=!people.deactivated">
+    <div class="card new">
+  <h4 class="style"><b>{{people.name}}</b></h4> 
+  <p>{{people.height}}</p> 
+  <p>{{people.homeworld}}</p> 
+  <p>{{people.url}}</p>
+</div>
+
+</div>
+</div>
+<div >
+<div class="container" *ngFor="let people of peopl">
+<div class="card nnew">
+  <h4 class="style"><b>{{people.name}}</b></h4> 
+  <p>{{people.height}}</p> 
+  <p>{{people.homeworld}}</p> 
+  <p>{{people.url}}</p>
+</div>
+</div>
+</div>
+</div>
+
